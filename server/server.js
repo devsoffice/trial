@@ -33,7 +33,7 @@ app.use(cors({
   credentials: true,
   origin: 'https://trial-nine-indol.vercel.app',
 }));
-app.use(express.json({limit: '5mb'}));
+app.use(express.json({ limit: '5mb' }));
 app.use(cookieParser());
 app.use(morgan("dev"));
 
