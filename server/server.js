@@ -31,7 +31,7 @@ mongoose
 // apply middlewares
 app.use(cors({
   credentials: true,
-  origin: 'http://localhost:3000',
+  origin: 'https://trial-nine-indol.vercel.app',
 }));
 app.use(express.json({limit: '5mb'}));
 app.use(cookieParser());
