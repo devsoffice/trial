@@ -8,7 +8,7 @@ const handle = app.getRequestHandler();
 
 const csrfMiddleware = async (req, res, next) => {
   try {
-    const response = await fetch('hhttps://squid-app-xbx74.ondigitalocean.app/api/csrf-token', { credentials: 'include' });
+    const response = await fetch('https://monkfish-app-i3xii.ondigitalocean.app/api/csrf-token', { credentials: 'include' });
     const { csrfToken } = await response.json();
     req.headers['x-csrf-token'] = csrfToken;
 
@@ -29,7 +29,7 @@ app
     if (!dev) {
       server.use(
         createProxyMiddleware({
-          target: "https://squid-app-xbx74.ondigitalocean.app/api",
+          target: "https://monkfish-app-i3xii.ondigitalocean.app/api",
           changeOrigin: true,
         })
       );
@@ -41,7 +41,7 @@ app
 
     server.listen(3000, (err) => {
       if (err) throw err;
-      console.log("> Ready on https://squid-app-xbx74.ondigitalocean.app/api");
+      console.log("> Ready on https://monkfish-app-i3xii.ondigitalocean.app/api");
     });
   })
   .catch((err) => {
