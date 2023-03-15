@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 const morgan = require("morgan");
 require("dotenv").config();
 
-const csrfProtection = csrf({ cookie: true });
+// const csrfProtection = csrf({ cookie: true });
 const crypto = require('crypto')
 const session = require('express-session')
 
@@ -37,11 +37,11 @@ app.use(morgan("dev"));
 // route
 readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 // csrf
-app.use(csrfProtection);
+// app.use(csrfProtection);
 
-app.get("/api/csrf-token", (req, res) => {
-  res.json({ csrfToken: req.csrfToken() });
-});
+// app.get("/api/csrf-token", (req, res) => {
+//   res.json({ csrfToken: req.csrfToken() });
+// });
 
 // error handler
 app.use((err, req, res, next) => {
